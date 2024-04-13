@@ -10,13 +10,12 @@ const AboutUs = () => {
                 </h1>
             </section>
 
-
             <main className=' flex items-center justify-center mt-3'>
-                <span className="m-4 px-8">
+                <span className=" m-0 px-0 md:m-4 md:px-8">
                     <Maps />
                 </span>
 
-                <span className="m-4 px-8 ">
+                <span className="m-4 px-8 pt-4 ">
                     <div className='mt-2 md:text-base text-sm font-extralight max-w-[600px]'>
                         <p className=' my-3 '>
                             With years of experience and a commitment to providing <br />

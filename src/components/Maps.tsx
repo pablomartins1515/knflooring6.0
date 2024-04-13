@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { GoogleMap, useJsApiLoader, OverlayView } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '360px',
-  height: '360px'
+  width: '320px',
+  height: '320px'
 };
 
 const center = {
@@ -80,7 +80,7 @@ function Maps() {
         {/* Chama a função para renderizar o conteúdo */}
         {drawCircleInsideMap()}
       </OverlayView>
-      <div id="map" style={{ width: '360px', height: '360px' }} />
+      <div id="map" style={{ width: '320px', height: '320px' }} />
     </GoogleMap>
   ) : <></>;
 }

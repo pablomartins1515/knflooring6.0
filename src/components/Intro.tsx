@@ -56,7 +56,7 @@ const Intro = () => {
                         <div className="px-5 py-10 flex justify-center items-center row-end-4 row-span-4 flex-row-reverse cursor-pointer">
                             <ScrollLink to="idScrollComponentButtonGetAQuote" smooth={true} duration={500} offset={-100}>
                                 <button
-                                    className="bg-orange-500 text-gray-50 py-3 px-16 rounded-lg font-medium text-base hover:bg-opacity-60 transition-colors duration-200 disabled:opacity-50"
+                                    className="bg-orange-500 text-gray-50  md:py-4 md:px-20 py-3 px-16 rounded-lg font-medium  md:text-lg text-base hover:bg-opacity-60 transition-colors duration-200 disabled:opacity-50"
                                 >
                                     Get A Quote
                                 </button>
