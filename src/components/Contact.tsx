@@ -1,10 +1,6 @@
 import React from 'react';
 import Subscribe from './Subscribe';
 
-interface ContactProps {
-    token: string;
-}
-
 export function Contact() {
     return (
         <main className="flex flex-1 items-center content-center justify-center mt-3 bg-gray-75">
