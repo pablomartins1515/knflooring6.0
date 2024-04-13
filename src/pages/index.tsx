@@ -13,7 +13,7 @@ const HomePage = () => {
     const token = process.env.NEXT_PUBLIC_API_TOKEN;
     return (
 
-        <>
+        <div className='m-0 p-0 justify-center content-center items-center'>
             <Head>
                 <title>Página Inicial</title>
                 <meta name="description" content="Descrição da página inicial..." />
@@ -25,25 +25,20 @@ const HomePage = () => {
                 </span>
             </main>
 
-            <OurServices />
 
             <OurProjects />
 
             <AboutUs />
 
-            <div>
-                <section id="idScrollComponentButtonGetAQuote"> {/*ID de scroll criado para ser utilizado nos componentes onde houver o botão Get A Quote, ex: Header */}
-                    {token && <Subscribe token={token} />}
-                </section>
-            </div>
-
+            {token && <Subscribe token={token} />}
 
             <Rodape />
 
             <div className='flex-auto BottomStyle fixed bottom-3 right-1  h-15 w-16 cursor-pointer'>
                 <BottomWhatsApp />
             </div>
-        </>
+        <div/>
+    </div>
     );
 }
 

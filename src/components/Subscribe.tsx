@@ -141,6 +141,8 @@ const Subscribe: React.FC<Props> = ({ token }) => {
 
     return (
         <div>
+          <section id="idScrollComponentButtonGetAQuote"> {/*ID de scroll criado para ser utilizado nos componentes onde houver o botão Get A Quote, ex: Header */}
+
             <div className="pt-16 flex justify-center items-center">
                 <form onSubmit={handleSubscribe} className="flex flex-col gap-4 px-4  w-96 justify-center ">
                     <input
@@ -200,7 +202,7 @@ const Subscribe: React.FC<Props> = ({ token }) => {
             <p className="mb-12 text-base text-gray-500 font-normal text-center">
                 info@malvesflooringsolutions.com
             </p>
-
+            </section>
         </div>
     );
 }
