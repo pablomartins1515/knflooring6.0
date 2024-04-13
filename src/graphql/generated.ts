@@ -4789,7 +4789,6 @@ export type Subscriber = Entity & Node & {
   createdBy?: Maybe<User>;
   /** Get the document in other stages */
   documentInStages: Array<Subscriber>;
-  email: Scalars['String']['output'];
   /** List of Subscriber versions */
   history: Array<Version>;
   /** The unique identifier */
@@ -4873,7 +4872,6 @@ export type SubscriberConnection = {
 
 export type SubscriberCreateInput = {
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
-  email: Scalars['String']['input'];
   message: Scalars['String']['input'];
   name: Scalars['String']['input'];
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -4932,25 +4930,6 @@ export type SubscriberManyWhereInput = {
   documentInStages_every?: InputMaybe<SubscriberWhereStageInput>;
   documentInStages_none?: InputMaybe<SubscriberWhereStageInput>;
   documentInStages_some?: InputMaybe<SubscriberWhereStageInput>;
-  email?: InputMaybe<Scalars['String']['input']>;
-  /** All values containing the given string. */
-  email_contains?: InputMaybe<Scalars['String']['input']>;
-  /** All values ending with the given string. */
-  email_ends_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values that are contained in given list. */
-  email_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  email_not?: InputMaybe<Scalars['String']['input']>;
-  /** All values not containing the given string. */
-  email_not_contains?: InputMaybe<Scalars['String']['input']>;
-  /** All values not ending with the given string */
-  email_not_ends_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values that are not contained in given list. */
-  email_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** All values not starting with the given string. */
-  email_not_starts_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values starting with the given string. */
-  email_starts_with?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['ID']['input']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']['input']>;
@@ -5067,8 +5046,6 @@ export type SubscriberManyWhereInput = {
 export enum SubscriberOrderByInput {
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
-  EmailAsc = 'email_ASC',
-  EmailDesc = 'email_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   MessageAsc = 'message_ASC',
@@ -5084,7 +5061,6 @@ export enum SubscriberOrderByInput {
 }
 
 export type SubscriberUpdateInput = {
-  email?: InputMaybe<Scalars['String']['input']>;
   message?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   whatsapp?: InputMaybe<Scalars['String']['input']>;
@@ -5191,25 +5167,6 @@ export type SubscriberWhereInput = {
   documentInStages_every?: InputMaybe<SubscriberWhereStageInput>;
   documentInStages_none?: InputMaybe<SubscriberWhereStageInput>;
   documentInStages_some?: InputMaybe<SubscriberWhereStageInput>;
-  email?: InputMaybe<Scalars['String']['input']>;
-  /** All values containing the given string. */
-  email_contains?: InputMaybe<Scalars['String']['input']>;
-  /** All values ending with the given string. */
-  email_ends_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values that are contained in given list. */
-  email_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** Any other value that exists and is not equal to the given value. */
-  email_not?: InputMaybe<Scalars['String']['input']>;
-  /** All values not containing the given string. */
-  email_not_contains?: InputMaybe<Scalars['String']['input']>;
-  /** All values not ending with the given string */
-  email_not_ends_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values that are not contained in given list. */
-  email_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  /** All values not starting with the given string. */
-  email_not_starts_with?: InputMaybe<Scalars['String']['input']>;
-  /** All values starting with the given string. */
-  email_starts_with?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['ID']['input']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']['input']>;
@@ -5339,7 +5296,6 @@ export type SubscriberWhereStageInput = {
 
 /** References Subscriber record uniquely */
 export type SubscriberWhereUniqueInput = {
-  email?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['ID']['input']>;
 };
 
@@ -6389,7 +6345,6 @@ export enum _SystemDateTimeFieldVariation {
 
 export type CreateSubscriberMutationVariables = Exact<{
   name: Scalars['String']['input'];
-  email: Scalars['String']['input'];
   whatsapp: Scalars['String']['input'];
   message: Scalars['String']['input'];
 }>;
@@ -6412,14 +6367,12 @@ export type GetLessonsQuery = { __typename?: 'Query', lessons: Array<{ __typenam
 export type GetSubscribersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetSubscribersQuery = { __typename?: 'Query', subscribers: Array<{ __typename?: 'Subscriber', name: string, email: string, whatsapp: string, message: string }> };
+export type GetSubscribersQuery = { __typename?: 'Query', subscribers: Array<{ __typename?: 'Subscriber', name: string, whatsapp: string, message: string }> };
 
 
 export const CreateSubscriberDocument = gql`
-    mutation CreateSubscriber($name: String!, $email: String!, $whatsapp: String!, $message: String!) {
-  createSubscriber(
-    data: {name: $name, email: $email, whatsapp: $whatsapp, message: $message}
-  ) {
+    mutation CreateSubscriber($name: String!, $whatsapp: String!, $message: String!) {
+  createSubscriber(data: {name: $name, whatsapp: $whatsapp, message: $message}) {
     id
   }
 }
@@ -6440,7 +6393,6 @@ export type CreateSubscriberMutationFn = Apollo.MutationFunction<CreateSubscribe
  * const [createSubscriberMutation, { data, loading, error }] = useCreateSubscriberMutation({
  *   variables: {
  *      name: // value for 'name'
- *      email: // value for 'email'
  *      whatsapp: // value for 'whatsapp'
  *      message: // value for 'message'
  *   },
@@ -6551,7 +6503,6 @@ export const GetSubscribersDocument = gql`
     query GetSubscribers {
   subscribers(orderBy: updatedAt_ASC, stage: DRAFT) {
     name
-    email
     whatsapp
     message
   }

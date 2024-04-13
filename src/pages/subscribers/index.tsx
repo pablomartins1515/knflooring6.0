@@ -45,9 +45,8 @@ export default function Subscribers() {
                         {data.subscribers.map(subscriber => (
                             <div key={subscriber.name}>
                                 <p>Nome: {subscriber.name}</p>
-                                <p>Email: {subscriber.email}</p>
-                                <p>WhatsApp: {subscriber.whatsapp}</p>  
-                                <p>Data de Aniversário: {subscriber.message}</p>                            
+                                <p>Tel ou WhatsApp: {subscriber.whatsapp}</p>  
+                                <p>Mensagem do Cliente: {subscriber.message}</p>                            
                             </div>
                         ))}
                     </div>
