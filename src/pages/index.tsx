@@ -12,31 +12,32 @@ import OurProjects from '@/components/OurProjects';
 const HomePage = () => {
     const token = process.env.NEXT_PUBLIC_API_TOKEN;
     return (
-      
+
         <>
             <Head>
                 <title>Página Inicial</title>
                 <meta name="description" content="Descrição da página inicial..." />
             </Head>
-                <Header />
+            <Header />
             <main>
                 <span>
                     <Intro />
-                </span>         
+                </span>
             </main>
-    
+
             <OurServices />
 
             <OurProjects />
 
             <AboutUs />
-            
-            <section id="idScrollComponentButtonGetAQuote"> {/*ID de scroll criado para ser utilizado nos componentes onde houver o botão Get A Quote, ex: Header */}
-                {token && <Subscribe token={token} />}
-            </section>
-            
-            <Subscribe token={token} />
-            
+
+            <div>
+                <section id="idScrollComponentButtonGetAQuote"> {/*ID de scroll criado para ser utilizado nos componentes onde houver o botão Get A Quote, ex: Header */}
+                    {token && <Subscribe token={token} />}
+                </section>
+            </div>
+
+
             <Rodape />
 
             <div className='flex-auto BottomStyle fixed bottom-3 right-1  h-15 w-16 cursor-pointer'>
