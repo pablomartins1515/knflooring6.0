@@ -25,6 +25,7 @@ const HomePage = () => {
                 </span>
             </main>
 
+            <OurServices />
 
             <OurProjects />
 
