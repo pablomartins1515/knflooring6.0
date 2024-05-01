@@ -176,7 +176,7 @@ const Subscribe: React.FC<Props> = ({ token }) => {
                     </p>
                 </Link>
                 <p className="mb-12 text-base text-gray-500 font-normal text-center">
-                    info@malvesflooringsolutions.com
+                   kn.flooring@hotmail.com
                 </p>
             </section>
         </div>
