@@ -21,7 +21,7 @@ const AboutUs = () => {
                             With years of experience and a commitment to providing <br />
                             <strong>quality services and products.</strong> <br />
                         </p>
-                        <p>We serve all of <strong> Monmouth Country, NJ</strong> and the surrounding region.</p>
+                        <p>We serve all of <strong>Monmouth Country, NJ</strong> and the surrounding region.</p>
                         <p className=' my-3 '>
                             We offer a <strong>wide variety of flooring options to suit any style and <br />
                                 budget.</strong> From hardwood and laminate to carpet and tile and refinishing. <br />

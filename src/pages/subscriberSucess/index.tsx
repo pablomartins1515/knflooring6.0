@@ -25,7 +25,7 @@ export default function subscriberSucess() {
     return (
         <>
             <Head>
-                <title>Sucesso </title>
+                <title>Sucess</title>
                 <meta name="description" content=" "
                 />
             </Head>
@@ -33,15 +33,21 @@ export default function subscriberSucess() {
 
             <Header />
                 <h1 className="justify-center itens-center flex m-4 text-3xl ">
-                    Parabéns!!!
+                    Congratulations!!!
                 </h1>
 
                 <p className="justify-center itens-center text-center flex flex-1 m-4 font-extrabold text-3xl">
-                    Sua inscricão foi 
+                Your registration was
+ 
                 </p>
 
                 <p className="justify-center itens-center text-center flex flex-1 m-2 font-extrabold text-3xl text-green-500">
-                   realizada com sucesso! 
+                done successfully!
+                </p>
+
+
+                <p className=" mt-4 justify-center itens-center text-center flex flex-1 m-2 font-extralight text-3xl mx-4">
+                Our team will contact you shortly and continue with the service!
                 </p>
 
 

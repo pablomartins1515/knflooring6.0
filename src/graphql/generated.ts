@@ -4783,6 +4783,7 @@ export enum Stage {
 
 export type Subscriber = Entity & Node & {
   __typename?: 'Subscriber';
+  address: Scalars['String']['output'];
   /** The time the document was created */
   createdAt: Scalars['DateTime']['output'];
   /** User that created this document */
@@ -4871,6 +4872,7 @@ export type SubscriberConnection = {
 };
 
 export type SubscriberCreateInput = {
+  address: Scalars['String']['input'];
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   message: Scalars['String']['input'];
   name: Scalars['String']['input'];
@@ -4911,6 +4913,25 @@ export type SubscriberManyWhereInput = {
   OR?: InputMaybe<Array<SubscriberWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']['input']>;
+  address?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  address_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  address_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  address_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  address_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  address_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  address_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  address_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  address_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  address_starts_with?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -5044,6 +5065,8 @@ export type SubscriberManyWhereInput = {
 };
 
 export enum SubscriberOrderByInput {
+  AddressAsc = 'address_ASC',
+  AddressDesc = 'address_DESC',
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
   IdAsc = 'id_ASC',
@@ -5061,6 +5084,7 @@ export enum SubscriberOrderByInput {
 }
 
 export type SubscriberUpdateInput = {
+  address?: InputMaybe<Scalars['String']['input']>;
   message?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   whatsapp?: InputMaybe<Scalars['String']['input']>;
@@ -5084,6 +5108,7 @@ export type SubscriberUpdateManyInlineInput = {
 };
 
 export type SubscriberUpdateManyInput = {
+  address?: InputMaybe<Scalars['String']['input']>;
   message?: InputMaybe<Scalars['String']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   whatsapp?: InputMaybe<Scalars['String']['input']>;
@@ -5148,6 +5173,25 @@ export type SubscriberWhereInput = {
   OR?: InputMaybe<Array<SubscriberWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']['input']>;
+  address?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  address_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  address_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  address_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  address_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  address_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  address_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  address_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  address_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  address_starts_with?: InputMaybe<Scalars['String']['input']>;
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -6347,6 +6391,7 @@ export type CreateSubscriberMutationVariables = Exact<{
   name: Scalars['String']['input'];
   whatsapp: Scalars['String']['input'];
   message: Scalars['String']['input'];
+  address: Scalars['String']['input'];
 }>;
 
 
@@ -6367,12 +6412,14 @@ export type GetLessonsQuery = { __typename?: 'Query', lessons: Array<{ __typenam
 export type GetSubscribersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetSubscribersQuery = { __typename?: 'Query', subscribers: Array<{ __typename?: 'Subscriber', name: string, whatsapp: string, message: string }> };
+export type GetSubscribersQuery = { __typename?: 'Query', subscribers: Array<{ __typename?: 'Subscriber', name: string, whatsapp: string, message: string, address: string }> };
 
 
 export const CreateSubscriberDocument = gql`
-    mutation CreateSubscriber($name: String!, $whatsapp: String!, $message: String!) {
-  createSubscriber(data: {name: $name, whatsapp: $whatsapp, message: $message}) {
+    mutation CreateSubscriber($name: String!, $whatsapp: String!, $message: String!, $address: String!) {
+  createSubscriber(
+    data: {name: $name, whatsapp: $whatsapp, message: $message, address: $address}
+  ) {
     id
   }
 }
@@ -6395,6 +6442,7 @@ export type CreateSubscriberMutationFn = Apollo.MutationFunction<CreateSubscribe
  *      name: // value for 'name'
  *      whatsapp: // value for 'whatsapp'
  *      message: // value for 'message'
+ *      address: // value for 'address'
  *   },
  * });
  */
@@ -6505,6 +6553,7 @@ export const GetSubscribersDocument = gql`
     name
     whatsapp
     message
+    address
   }
 }
     `;

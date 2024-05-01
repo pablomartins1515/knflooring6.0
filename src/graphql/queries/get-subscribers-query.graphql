@@ -3,5 +3,6 @@ query GetSubscribers {
     name
     whatsapp
     message
+    address
   }
 }

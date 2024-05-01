@@ -11,6 +11,7 @@ interface Props {
 const Subscribe: React.FC<Props> = ({ token }) => {
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
+    const [address, setAddress] = useState('');
     const [whatsapp, setWhatsapp] = useState('');
     const [whatsappAdm, setWhatsappAdm] = useState('');
     const [createSubscriber, { loading }] = useCreateSubscriberMutation();
@@ -26,6 +27,7 @@ const Subscribe: React.FC<Props> = ({ token }) => {
                     name,
                     whatsapp,
                     message,
+                    address,
                 }
             });
             console.log('Inscrição realizada com sucesso.');
@@ -139,6 +141,13 @@ const Subscribe: React.FC<Props> = ({ token }) => {
                             />
                         </div>
                         <input
+                            className="flex bg-zinc-200 text-gray-900 rounded-md px-5 h-14 border border-gray-400"
+                            type="text"
+                            placeholder="Please enter your complete address."
+                            onChange={event => setAddress(event.target.value)}
+                        />
+
+                        <input
                             className="flex bg-zinc-200 text-gray-900 rounded-md px-5 h-28 border border-gray-400"
                             type="text"
                             placeholder="Message"
@@ -176,7 +185,7 @@ const Subscribe: React.FC<Props> = ({ token }) => {
                     </p>
                 </Link>
                 <p className="mb-12 text-base text-gray-500 font-normal text-center">
-                   kn.flooring@hotmail.com
+                    kn.flooring@hotmail.com
                 </p>
             </section>
         </div>

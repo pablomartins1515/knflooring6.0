@@ -1,5 +1,5 @@
-  mutation CreateSubscriber($name: String!, $whatsapp:String!, $message: String!,  ) {
-    createSubscriber(data: {name: $name, whatsapp:$whatsapp, message:$message}) {
+  mutation CreateSubscriber($name: String!, $whatsapp:String!, $message: String!, $address: String!,  ) {
+    createSubscriber(data: {name: $name, whatsapp:$whatsapp, message:$message, address:$address,}) {
         id
   }
 }
