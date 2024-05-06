@@ -9,7 +9,7 @@ const GoogleAnalytics = () => {
       {/* Google Analytics */}
       <Script
         async
-        src="https://www.googletagmanager.com/gtag/js?id=G-L7EWJJVKGL"
+        src="https://www.googletagmanager.com/gtag/js?id=AW-16549865575"
       />
       <script
         dangerouslySetInnerHTML={{
@@ -17,7 +17,7 @@ const GoogleAnalytics = () => {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-L7EWJJVKGL');
+            gtag('config', 'AW-16549865575');
           `,
         }}
       />
