@@ -8,6 +8,7 @@ import AboutUs from '../components/AboutUs'; // Corrigido o caminho do component
 import Subscribe from '../components/Subscribe'; // Corrigido o caminho do componente
 import BottomWhatsApp from '../components/BottomWhatsApp'; // Corrigido o caminho do componente
 import OurProjects from '@/components/OurProjects';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 const HomePage = () => {
     const token = process.env.NEXT_PUBLIC_API_TOKEN;
@@ -34,6 +35,8 @@ const HomePage = () => {
             {token && <Subscribe token={token} />}
 
             <Rodape />
+
+            <GoogleAnalytics />
 
             <div className='flex-auto BottomStyle fixed bottom-3 right-1  h-15 w-16 cursor-pointer'>
                 <BottomWhatsApp />
