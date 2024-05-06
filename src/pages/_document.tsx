@@ -15,14 +15,14 @@ export default class MyDocument extends Document {
           />
 
           {/* Google Analytics */}
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-QEFJXGWZV9"></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16549865575"></script>
                     <script
                         dangerouslySetInnerHTML={{
                             __html: `
                                 window.dataLayer = window.dataLayer || [];
                                 function gtag(){dataLayer.push(arguments);}
                                 gtag('js', new Date());
-                                gtag('config', 'G-QEFJXGWZV9');
+                                gtag('config', 'AW-16549865575');
                             `,
                         }}
                     />
